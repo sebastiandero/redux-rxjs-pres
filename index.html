@@ -13,6 +13,9 @@
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/monokai.css">
 
+    <!-- custom theme -->
+    <link rel="stylesheet" href="css/custom.css">
+
     <!-- Printing and PDF exports -->
     <script>
         var link = document.createElement('link');
@@ -21,12 +24,100 @@
         link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
         document.getElementsByTagName('head')[0].appendChild(link);
     </script>
+
 </head>
 <body>
 <div class="reveal">
     <div class="slides">
+
+        <!-- Title -->
+        <section data-background-image="https://ngrx.io/assets/images/header.svg">
+            <img alt="ngrx-logo" class="title" src="https://ngrx.io/assets/images/badge.svg">
+        </section>
+
+        <!-- Content -->
         <section>
-            <h1>Angular Testing in VIGO NG</h1>
+            <h3>Content</h3>
+            <ul>
+                <li>
+                    Functional Programming
+                </li>
+                <li>
+                    Reactive Programming, RxJS
+                </li>
+                <li>
+                    Workshop
+                </li>
+            </ul>
+        </section>
+
+        <!-- Functional Programming -->
+        <section>
+            <!-- Title -->
+            <section>
+                <h2>Functional Programming</h2>
+                <img alt="lambda" class="title" src="https://upload.wikimedia.org/wikipedia/commons/3/39/Lambda_lc.svg">
+            </section>
+            <section>
+                <h3>Imperative vs Declarative</h3>
+                <table>
+                    <thead>
+                    <tr>
+                        <td>Imperative</td>
+                        <td>Declarative</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Control Flow (if, where, for)</td>
+                        <td>Computation</td>
+                    </tr>
+                    <tr>
+                        <td>Many side effects</td>
+                        <td>No side effects</td>
+                    </tr>
+                    <tr>
+                        <td>Object Oriented</td>
+                        <td>Functional</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <aside class="notes">
+                    <ul>
+                        <li>Imperative is a programming paradigm that uses statements to change the state of the
+                            program
+                        </li>
+                        <li>Declarative is a programming paradigm that does not change program state but instead only
+                            does computations on data
+                        </li>
+                    </ul>
+                </aside>
+            </section>
+            <section>
+                <h3>State and Data</h3>
+                <ul>
+                    <li>No program state changes</li>
+                    <li>Immutable Data Structures</li>
+                    <li>Like mathematical functions</li>
+                    <li>Ouput of a function only depends on input</li>
+                    <li>Recursions instead of looping</li>
+                </ul>
+            </section>
+        </section>
+
+        <!-- RxJS - Reactive Extensions for JavaScript -->
+        <section>
+            <section>
+                <h2>RxJS - Reactive Extensions for JavaScript</h2>
+                <img alt="RxJS Logo" class="title" src="https://rxjs-dev.firebaseapp.com/generated/images/marketing/home/Rx_Logo-512-512.png">
+            </section>
+        </section>
+
+        <!-- Workshop -->
+        <section>
+            <section>
+                <h2>Workshop</h2>
+            </section>
         </section>
     </div>
 </div>

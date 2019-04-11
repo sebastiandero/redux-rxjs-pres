@@ -58,6 +58,8 @@
                 <h2>Functional Programming</h2>
                 <img alt="lambda" class="title" src="https://upload.wikimedia.org/wikipedia/commons/3/39/Lambda_lc.svg">
             </section>
+
+            <!-- Imperative vs Declarative -->
             <section>
                 <h3>Imperative vs Declarative</h3>
                 <table>
@@ -93,6 +95,8 @@
                     </ul>
                 </aside>
             </section>
+
+            <!-- State and Data -->
             <section>
                 <h3>State and Data</h3>
                 <ul>
@@ -102,14 +106,212 @@
                     <li>Ouput of a function only depends on input</li>
                     <li>Recursions instead of looping</li>
                 </ul>
+                <aside class="notes">
+                    <ul>
+                        <li>Only data copies change, and they determine the program flow</li>
+                        <li>No data is changeable, always have to copy it first "pass-by-value"</li>
+                        <li>Like mathematical functions in that they input and output without ever changing behavior
+                        </li>
+                        <li>functions calling themselves instead of lopping a statement</li>
+                    </ul>
+                </aside>
+            </section>
+
+            <!-- Benefits -->
+            <section>
+                <h3>Benefits</h3>
+                <ul>
+                    <li>Comprehension</li>
+                    <li>Testability</li>
+                    <li>Behavioral Predictability</li>
+                    <li>Simple to Parallelize</li>
+                </ul>
+                <aside class="notes">
+                    <ul>
+                        <li>Individual computations are easier to comprehend</li>
+                        <li>Easier to test because you don't have to test for side effects</li>
+                        <li>Easier to predict behavior because again, no side effects and no concurrent modification of
+                            the same object instance
+                        </li>
+                        <li>Simply Paralellizable because the data holds the state, and data can be split by n aslong as
+                            data % n = 0
+                        </li>
+                    </ul>
+                </aside>
+            </section>
+
+            <!-- Downsides -->
+            <section>
+                <h3>Downsides</h3>
+                <ul>
+                    <li>Synchronous Performance</li>
+                    <li>Working Memory Usage</li>
+                    <li>Cohesion in big code bases</li>
+                </ul>
+                <aside class="notes">
+                    <ul>
+                        <li>Synchronous Performance is worse because of data copy operations and big heaps and stacks
+                        </li>
+                        <li>Working Memory Usage is worse because of many immutable data copies in memory</li>
+                        <li>cohesion is not as good because many use cases benefit from the abstraction that is possible
+                            with OOP
+                        </li>
+                    </ul>
+                </aside>
+            </section>
+
+            <!-- Multi-paradigm Languages -->
+            <section>
+                <h3>Multi-paradigm Languages</h3>
+                <ul>
+                    <li>Can benefit from both</li>
+                    <li>Java/JavaScript Streams</li>
+                    <li>Reactive Extensions</li>
+                    <li>Kotlin</li>
+                </ul>
+                <aside class="notes">
+                    <ul>
+                        <li>C++ is another example of multi-paradigm</li>
+                        <li>ledgibility and abstraction over async performance</li>
+                        <li>weighing benefits and applying paradigms as needed</li>
+                        <li>mixing paradigms</li>
+                    </ul>
+                </aside>
             </section>
         </section>
 
         <!-- RxJS - Reactive Extensions for JavaScript -->
         <section>
+            <!-- Title -->
             <section>
                 <h2>RxJS - Reactive Extensions for JavaScript</h2>
-                <img alt="RxJS Logo" class="title" src="https://rxjs-dev.firebaseapp.com/generated/images/marketing/home/Rx_Logo-512-512.png">
+                <img alt="RxJS Logo" class="title"
+                     src="https://rxjs-dev.firebaseapp.com/generated/images/marketing/home/Rx_Logo-512-512.png">
+            </section>
+
+            <!-- Reactive Programming -->
+            <section>
+                <h3>Reactive Programming</h3>
+                <ul>
+                    <li>Static or dynamic data-streams</li>
+                    <li>Propagation of change</li>
+                    <li>Pipes</li>
+                    <li>Streaming operators</li>
+                </ul>
+                <aside class="notes">
+                    <ul>
+                        <li>
+                            Complex topic, various implementations that are massively different.
+                        </li>
+                        <li>
+                            We will be focusing on reactive programming in the implementation framework of Rx
+                        </li>
+                        <li>
+                            Rx is the most popular framework for Reactive programming
+                        </li>
+                    </ul>
+                </aside>
+            </section>
+
+            <!-- Streaming Operators-->
+            <section data-background-iframe="https://rxmarbles.com/">
+                <aside class="notes">
+                    <ul>
+                        <li>
+                            Marble diagrams are a visualization of the data stream and its timing relative to other
+                            streams
+                        </li>
+                        <li>
+                            Marble diagrams are useful for understanding
+                        </li>
+                        <li>
+                            Rx is the most popular framework for Reactive programming
+                        </li>
+                    </ul>
+                </aside>
+            </section>
+
+            <!-- Key Concepts -->
+            <section>
+                <h3>Key Concepts</h3>
+                <ul>
+                    <li>
+                        Observables are Objects that can be subscribed to
+                    </li>
+                    <li>
+                        Subscriptions
+                    </li>
+                    <li>
+                        call-by-need
+                    </li>
+                    <li>
+                        Completing an observable
+                    </li>
+                    <li>
+                        Reactive Data Transformation
+                    </li>
+                </ul>
+                <aside class="notes">
+                    <ul>
+                        <li>
+                            there are also Subjects, where the user manually changes the value
+                        </li>
+                        <li>
+                            Subscriptions also need to be unsubscribed unless the observable completes, else you have a memory leak
+                        </li>
+                        <li>
+                            Lazy evaluation means, that the Pipe does not get evaluated until necessary, which means someone has to subscribe to it
+                        </li>
+                    </ul>
+                </aside>
+            </section>
+
+
+            <!-- Common Fallacies -->
+            <section>
+                <h3>Common Fallacies</h3>
+                <ul>
+                    <li>
+                        Nested subscribe statements
+                    </li>
+                    <li>
+                        Subscribe all the things!
+                    </li>
+                    <li>
+                        Not cleaning up subscriptions
+                    </li>
+                    <li>
+                        Not completing observables
+                    </li>
+                    <li>
+                        Returning new observables every time
+                    </li>
+                    <li>
+                        Performance
+                    </li>
+                </ul>
+                <aside class="notes">
+                    <ul>
+                        <li>
+                            Nested subscribe statements not necessary, use forkJoin for completing observables or combineLatest/zip for non-completing observables instead
+                        </li>
+                        <li>
+                            Don't subscribe if you dont have to, build pipes instead, use async pipe
+                        </li>
+                        <li>
+                            Clean up your subscriptions, unsubscribe where you need to
+                        </li>
+                        <li>
+                            Complete observables if you can, use first(), take(1), or .complete() on subjects and new observables
+                        </li>
+                        <li>
+                            Return the same observable where you can, this saves you alot of memory and can allow for caching with shareReplay(1)
+                        </li>
+                        <li>
+                            Performance can be bad if you dont use debounceTime(), debounce(), shareReplay() etc.
+                        </li>
+                    </ul>
+                </aside>
             </section>
         </section>
 
